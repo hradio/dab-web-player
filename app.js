@@ -1,6 +1,7 @@
-const audio = document.querySelector('audio');
-audio.src = ediPlayer.audioUrl;
+ediPlayer.startStream({url:'https://bredi.irt.de:443/services/13'})
 
+// playBtn for mobile devices
+document.querySelector('#startAudioContext').addEventListener('click', ediPlayer.audioCtx.resume, false);
 ediPlayer.startStream({url:'https://edistream.irt.de/services/4'})
 
 // images from audio stream
