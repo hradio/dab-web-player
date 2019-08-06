@@ -12,7 +12,7 @@ to understand how to use the **ediStreaming lib**, look at the example in [app.j
 to run the demo you can check out this repo and run it. however you need a webserver to do this. 
 
 
-you can also have a look at [view-source:http://mpattest.irt.de/hradio/simpleApi](view-source:http://mpattest.irt.de/hradio/simpleApi). it runs this repo.
+you can also have a look at [http://mpattest.irt.de/hradio/simpleApi](http://mpattest.irt.de/hradio/simpleApi). it runs this repo.
 
 add [ediPlayerLib.js](ediPlayerLib.js) to your dom. this file will also load [irtdab.js](irtdab.js) and [irtdab.worker.js](irtdab.worker.js). make sure all files are part of your project.
 
