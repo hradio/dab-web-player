@@ -35,7 +35,7 @@ the minimal example contains materialize files. *materialize* is *not* a depende
 
 `ediPlayer.state` :represents the current player state. it can be `running` or `stopped`.
 
-`ediPlayer.audioCtx`: this lib uses in the background the web Audio API. to increase this control possibilities, this property provides the corresponding baseAudioContext.
+`ediPlayer.audioCtx`: this lib uses in the background the [web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API). To increase control possibilities, this property provides the corresponding [baseAudioContext](https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext).
 
 
 
