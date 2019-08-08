@@ -43,7 +43,7 @@ the minimal example contains materialize files. *materialize* is *not* a depende
 
 you can register for events and define corresponding functions for them.
 
-`ediPlayer.addEventLsitener(type, (arg) => {console.log(arg)})`
+`ediPlayer.addEventListener(type, (arg) => {console.log(arg)})`
 
 `ediPlayer.removeEventListener(type, function)`
 
