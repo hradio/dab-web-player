@@ -18,3 +18,94 @@ add [ediPlayerLib.js](ediPlayerLib.js) to your dom. this file will also load [ir
 
 
 the minimal example contains materialize files. *materialize* is *not* a dependecy of the ediPlayer library.
+
+## API
+### Methods
+
+`ediPlayer.start([url])` : starts streaming data and Audiodecoding, when you call the function for the first time, an url must be passed. after that, this is no longer necessary. for compatibility reasons, `startStream()` also exists.
+
+`ediPlayer.stop()` : stops audio decoding and streaming data 
+
+### Properties
+
+
+`ediPlayer.state` :represents the current player state. it can be `running` or `stopped`.
+
+`ediPlayer.audioCtx`: this lib uses in the background the web Audio API. to increase this control possibilities, this property provides the corresponding baseAudioContext.
+
+
+
+### Events
+
+you can register for events and define corresponding functions for them.
+
+`ediPlayer.addEventLsitener(type, (arg) => {console.log(arg)})`
+
+`ediPlayer.removeEventListener(type, function)`
+
+type can be one of the flying events.
+
+<table>
+<tr><th> event </th><th> description </th><th> argument </th><tr>
+<tr><td> sls </td><td> Slide Show Service - DAB images </td><td>
+<pre>
+example argument:
+{
+  "contentName": "f851.jpg",
+  "clickThroughUrl": "",
+  "contentSubType": 1,
+  "triggerTime": "now",
+  "categoryId": 0,
+  "categoryTitle": "",
+  "isCategorized": false,
+  "slideId": 0,
+  "url": "blob:http://localhost:9000/99465a13-3c50-4768-a388-7c4586000391"
+}
+</pre>
+</td></tr>
+<tr><td> dls </td><td> Dynamic label Service - Text </td><td>
+
+   
+<pre>
+example argument:
+{
+    "dlsObject": {
+        "dynamicLabel": "Lana Del Rey - Video Games",
+        "charset": 0,
+        "itemToggle": true,
+        "itemRunning": true,
+        "dlPlusTags": {}
+    },
+    "dls": "Lana Del Rey - Video Games",
+    "dlsp": {
+        "ITEM_TITLE": "Video Games",
+        "ITEM_ARTIST": "Lana Del Rey"
+    }
+}
+</pre>
+
+
+</td></tr>
+
+
+
+<tr><td> sateChange </td><td> info about edi player state </td><td>
+
+   
+could be `running` or `stopped`
+
+
+</td></tr>
+
+
+<tr><td> serviceMetaData </td><td> not yet implemented - info about the current service </td><td>
+
+   
+ not yet implemented 
+
+</td></tr>
+
+
+
+</td></tr>
+</table>
