@@ -47,7 +47,7 @@ you can register for events and define corresponding functions for them.
 
 `ediPlayer.removeEventListener(type, function)`
 
-type can be one of the flying events.
+`type` can be one of the flying events.
 
 <table>
 <tr><th> event </th><th> description </th><th> argument </th><tr>
