@@ -1,20 +1,44 @@
-ediPlayer.startStream({url:'https://bredi.irt.de:443/services/13'})
+// playBtn
+const playPauseBtn = document.querySelector('#startAudioContext');
+playPauseBtn.addEventListener('click', () => {
+       // play or pause track depending on state
+    if (playPauseBtn.dataset.playing === 'false') {
+        ediPlayer.start({url:'https://bredi.irt.de:443/services/13'})
+        playPauseBtn.dataset.playing = 'true';
+        playPauseBtn.firstChild.innerHTML = 'access_time';
+        
+    } else if (playPauseBtn.dataset.playing === 'true') {
+        ediPlayer.stop();
+        playPauseBtn.dataset.playing = 'false';
+        playPauseBtn.firstChild.innerHTML = 'access_time';
+    }
+} , false);
 
-// playBtn for mobile devices
-document.querySelector('#startAudioContext').addEventListener('click', ediPlayer.audioCtx.resume, false);
-ediPlayer.startStream({url:'https://edistream.irt.de/services/4'})
+ediPlayer.addEventListener('stateChange', (state) => {
+    switch (state) {
+        case 'running':
+             playPauseBtn.firstChild.innerHTML = 'stop';
+            break;
+    
+        case 'stopped':
+             playPauseBtn.firstChild.innerHTML = 'play_arrow';
+            break;
+    }
+});
 
-// images from audio stream
+const prettyPrintJson = (json) => {
+    M.toast({html: '<pre>' + JSON.stringify(json, null, 10) + '</pre>'});
+}
+
 ediPlayer.addEventListener('sls', (obj) => {
     M.toast({html: '<img src="' + obj.url + '">'});
+    prettyPrintJson(obj);
 });
 
-// some system messages from player
 ediPlayer.addEventListener('msg', (obj) => {
-    M.toast({html: 'msg: ' + obj.msg});
+    prettyPrintJson(obj);
 });
 
-// meta data from and about audio stream
 ediPlayer.addEventListener('dls', (obj) => {
-    M.toast({html: '<pre>' + JSON.stringify(obj, null, 10) + '</pre>'});
+    prettyPrintJson(obj);
 });
