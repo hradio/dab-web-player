@@ -1,3 +1,7 @@
+# Attention! Beta phase.
+
+At the moment there are **still considerable performance problems**.  These problems will be fixed in the coming months. Also the** API could change several times.**
+
 # ediPlayer simple api
 
 this repo contains only the compiled files that can be directly integrated into your browser. The whole toolchain to create the **ediStreaming lib** still consists of too many manual steps, but will also be published here or in its own repo.
