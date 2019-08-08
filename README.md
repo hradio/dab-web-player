@@ -1,6 +1,6 @@
 # Attention! Beta phase.
 
-At the moment there are **still considerable performance problems**.  These problems will be fixed in the coming months. Also the** API could change several times.**
+At the moment there are still **considerable performance problems**.  These problems will be fixed in the coming months. Also the **API could change several times.**
 
 # ediPlayer simple api
 
