@@ -93,7 +93,7 @@ example argument:
 
 
 
-<tr><td> sateChange </td><td> info about edi player state </td><td>
+<tr><td> stateChange </td><td> info about edi player state </td><td>
 
    
 could be `running` or `stopped`
