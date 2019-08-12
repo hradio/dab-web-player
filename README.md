@@ -93,23 +93,50 @@ example argument:
 
 
 
-<tr><td> stateChange </td><td> info about edi player state </td><td>
+<tr>
+    <td> stateChange </td>
+    <td> info about edi player state </td>
+    <td>could be `running` or `stopped`</td>
+
+</tr>
+<tr>
+    <td> missingSharedArrayBuffer </td>
+    <td> not every browser has SharedArrayBuffer activated by default.  </td>
+    <td></td>
+</tr>
+
+
+<tr>
+    <td> msg </td>
+<td> some system messages like notifications and error messages. the EventObject has at least two properties.`msg` the notification itself as string <br> `code` a message code <br><br>depending on `code` there are some more properties. </td>
+<td>some `code`s are: afBroken, noStreamData, audioZero</td>
+</tr>
+
+
+
+<tr>
+    <td> dls </td>
+    <td> Dynamic label Service - Text </td>
+    <td>
 
    
-could be `running` or `stopped`
-
-
-</td></tr>
-
-
-<tr><td> serviceMetaData </td><td> not yet implemented - info about the current service </td><td>
-
-   
- not yet implemented 
-
-</td></tr>
-
-
-
-</td></tr>
+<pre>
+example argument:
+{
+    "dlsObject": {
+        "dynamicLabel": "Lana Del Rey - Video Games",
+        "charset": 0,
+        "itemToggle": true,
+        "itemRunning": true,
+        "dlPlusTags": {}
+    },
+    "dls": "Lana Del Rey - Video Games",
+    "dlsp": {
+        "ITEM_TITLE": "Video Games",
+        "ITEM_ARTIST": "Lana Del Rey"
+    }
+}
+</pre>
+    </td>
+</tr>
 </table>
