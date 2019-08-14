@@ -96,20 +96,72 @@ example argument:
 <tr>
     <td> stateChange </td>
     <td> info about edi player state </td>
-    <td>could be `running` or `stopped`</td>
+    <td>could be <code>running</code> or <code>stopped</code></td>
 
 </tr>
 <tr>
     <td> missingSharedArrayBuffer </td>
-    <td> not every browser has SharedArrayBuffer activated by default.  </td>
-    <td></td>
+    <td> not every browser has <code>SharedArrayBuffer</code> activated by default. dab encoding will not work without <code>SharedArrayBuffer</code>.  </td>
+    <td>
+    
+This event has no event-object as argument passed to the registered function.
+
+A description of SharedArrayBuffer follows.
+
+The <code>SharedArrayBuffer</code> object is not available.
+
+In Chrome go to chrome://flags/#shared-array-buffer to enable this feature.
+
+In FireFox go to about:config look for javascript.options.shared_memory and set it to true
+
+Audio is not available in FireFox at the moment, but meta-data are coming in.
+
+
+Note that <code>SharedArrayBuffer</code> was disabled by default in all major browsers on 5 January, 2018 in response to https://meltdownattack.com Spectre. 
+
+Chrome https://bugs.chromium.org/p/chromium/issues/detail?id=821270 re-enabled it in v67 on platforms where its site-isolation feature is enabled to protect against Spectre-style vulnerabilities.
+    
+    
+</td>
 </tr>
 
 
 <tr>
     <td> msg </td>
-<td> some system messages like notifications and error messages. the EventObject has at least two properties.`msg` the notification itself as string <br> `code` a message code <br><br>depending on `code` there are some more properties. </td>
-<td>some `code`s are: afBroken, noStreamData, audioZero</td>
+<td> some system messages like notifications and error messages. the EventObject has at least two properties.
+<br><br>
+
+<code>msg</code>: the notification itself as string 
+<br><br>
+
+<code>code</code>: a message code <br><br>
+
+depending on <code>code</code> there are some more properties. 
+</td>
+<td>
+<br>
+<br>
+
+Some <code>code</code>s are: <code>afBroken</code>, <code>noStreamData</code>, <code>audioZero</code>
+<pre>
+{
+    code: "noStreamData"
+    msg: "No data has been received from the streaming server for a few seconds. Is there a problem?"
+}
+</pre>
+
+or
+
+<pre>
+{   
+    code: "afBroken"
+    msg: "af seq counter broken", 
+    seq: 60447, 
+    lastSeqCounter: 60445, 
+}
+</pre>
+
+</td>
 </tr>
 
 
@@ -137,6 +189,6 @@ example argument:
     }
 }
 </pre>
-    </td>
+</td>
 </tr>
 </table>
