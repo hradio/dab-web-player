@@ -163,32 +163,4 @@ or
 
 </td>
 </tr>
-
-
-
-<tr>
-    <td> dls </td>
-    <td> Dynamic label Service - Text </td>
-    <td>
-
-   
-<pre>
-example argument:
-{
-    "dlsObject": {
-        "dynamicLabel": "Lana Del Rey - Video Games",
-        "charset": 0,
-        "itemToggle": true,
-        "itemRunning": true,
-        "dlPlusTags": {}
-    },
-    "dls": "Lana Del Rey - Video Games",
-    "dlsp": {
-        "ITEM_TITLE": "Video Games",
-        "ITEM_ARTIST": "Lana Del Rey"
-    }
-}
-</pre>
-</td>
-</tr>
 </table>
