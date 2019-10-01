@@ -142,7 +142,12 @@ depending on <code>code</code> there are some more properties.
 <br>
 <br>
 
-Some <code>code</code>s are: <code>afBroken</code>, <code>noStreamData</code>, <code>audioZero</code>
+Some <code>code</code>s are: 
+<code>afBroken</code>, 
+<code>noStreamData</code>, 
+<code>audioZero</code>, 
+<code>networkError</code>
+
 <pre>
 {
     code: "noStreamData"
