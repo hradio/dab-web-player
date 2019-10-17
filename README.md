@@ -26,7 +26,7 @@ the minimal example contains materialize files. *materialize* is *not* a depende
 ## API
 ### Methods
 
-`ediPlayer.start([url])` : starts streaming data and Audiodecoding, when you call the function for the first time, an url must be passed. after that, this is no longer necessary. for compatibility reasons, `startStream()` also exists.
+`ediPlayer.start([{url:'http://example.com/ediStream'}])` : starts streaming data and Audiodecoding, when you call the function for the first time, an url must be passed. after that, this is no longer necessary. for compatibility reasons, `startStream()` also exists.
 
 `ediPlayer.stop()` : stops audio decoding and streaming data 
 
