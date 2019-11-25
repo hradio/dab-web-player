@@ -26,13 +26,18 @@ the minimal example contains materialize files. *materialize* is *not* a depende
 ## API
 ### Methods
 
-`ediPlayer.start([{url:'http://example.com/ediStream'}])` : starts streaming data and Audiodecoding, when you call the function for the first time, an url must be passed. after that, this is no longer necessary. for compatibility reasons, `startStream()` also exists.
+#### `ediPlayer.start([{url:'http://example.com/ediStream'}])`
+starts streaming data and Audiodecoding, when you call the function for the first time, an url must be passed. after that, this is no longer necessary. for compatibility reasons, `startStream()` also exists.
 
-`ediPlayer.stop()` : stops audio decoding and streaming data 
+#### `ediPlayer.stop()`
+stops audio decoding and streaming data 
 
-`ediPlayer.seek(ms)` :  if timeshift is supported by the EDI server, the EDI stream can be set to a time relative to now in milliseconds. <code>ediPlayer.seek(3600e3)</code> sets the edistream an hour ago
-`ediPlayer.seekUts(uts)` : the same as <code>ediPlayer.seek()</code> only that the time is specified as absolute Unix time in Milliseconds.
-`ediPlayer.toggleId(id)` :  the same as <code>ediPlayer.seek()</code> only that the jump marker is passed over an ID to jump to defined positions. these positions come from the items-array that is available through the <code>items</code>event
+#### `ediPlayer.seek(ms)`
+if timeshift is supported by the EDI server, the EDI stream can be set to a time relative to now in milliseconds. <code>ediPlayer.seek(3600e3)</code> sets the edistream an hour ago
+#### `ediPlayer.seekUts(uts)`
+the same as <code>ediPlayer.seek()</code> only that the time is specified as absolute Unix time in Milliseconds.
+#### `ediPlayer.toggleId(id)`
+the same as <code>ediPlayer.seek()</code> only that the jump marker is passed over an ID to jump to defined positions. these positions come from the items-array that is available through the <code>items</code>event
 
 
 
@@ -40,9 +45,11 @@ the minimal example contains materialize files. *materialize* is *not* a depende
 ### Properties
 
 
-`ediPlayer.state` :represents the current player state. it can be `running` or `stopped`.
+#### `ediPlayer.state`
+represents the current player state. it can be `running` or `stopped`.
 
-`ediPlayer.audioCtx`: this lib uses in the background the [web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API). To increase control possibilities, this property provides the corresponding [baseAudioContext](https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext).
+#### `ediPlayer.audioCtx`
+this lib uses in the background the [web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API). To increase control possibilities, this property provides the corresponding [baseAudioContext](https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext).
 
 
 
@@ -203,16 +210,14 @@ or
     As argument an object is passed which consists of the maximum timeshift buffer size in milliseconds and a timeshift token. The timeshift token can be used to design multidevice senarios by transferring the token to another device.<br><br>
 To start the same stream at the same position on another device, the timeshift token is appended to the stream URL as get parameter. If the timeShiftControllerAvailable-event returns the same timeshift token, it is possible to control the stream from both devices.
 </td>
-    <td>
+<td>
 <pre>
 {
     'Timeshift-Max': 360000
     'Timeshift-Token': 'dsfh2345kh3'
 }
-
 </pre>
-    
-    </td>
+</td>
 </tr>
 
 
@@ -244,6 +249,7 @@ To start the same stream at the same position on another device, the timeshift t
         "slideMime": ""
     },
     ......
+]
     </pre>
     </td>
 </tr>
@@ -257,13 +263,10 @@ To start the same stream at the same position on another device, the timeshift t
 
 <tr>
     <td>unhandeldEdiTag</td>
-    <td> An EDI tag was found in the stream that was not further handled. this is especially the case for custom edi tags the case .
-
-    </td>
+    <td> An EDI tag was found in the stream that was not further handled. this is especially the case for custom edi tags the case .</td>
     <td>
-        {tagName, payLoad}
-        payload: uint8Array
-
+        <code>{tagName, payLoad}</code><br>
+        payload: <code>uint8Array</code>
     </td>
 </tr>
 
