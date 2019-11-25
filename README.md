@@ -36,6 +36,7 @@ stops audio decoding and streaming data
 if timeshift is supported by the EDI server, the EDI stream can be set to a time relative to now in milliseconds. <code>ediPlayer.seek(3600e3)</code> sets the edistream an hour ago
 #### `ediPlayer.seekUts(uts)`
 the same as <code>ediPlayer.seek()</code> only that the time is specified as absolute Unix time in Milliseconds.
+<code>ediPlayer.seekUts(new Date() - 1e3*60*5)</code> jumps 5sec back.
 #### `ediPlayer.toggleId(id)`
 the same as <code>ediPlayer.seek()</code> only that the jump marker is passed over an ID to jump to defined positions. these positions come from the items-array that is available through the <code>items</code>event
 
@@ -226,6 +227,7 @@ To start the same stream at the same position on another device, the timeshift t
     <td>an array consisting of item-running elements.</td>
     <td>
     <pre>
+    items-Array
 [
     {
         "label": "Talisco - Sun",
@@ -257,8 +259,8 @@ To start the same stream at the same position on another device, the timeshift t
 
 <tr>
     <td>liveItem</td>
-    <td>Items that are transferred at runtime. The structure corresponds to the elements from the item array.</td>
-    <td>one Object from items array</td>
+    <td>Items that are transferred at runtime. The structure corresponds to the elements from the items-array. (see items event)</td>
+    <td>one Object from items array (see items event)</td>
 </tr>
 
 <tr>
