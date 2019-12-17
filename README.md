@@ -42,10 +42,10 @@ the same as <code>ediPlayer.seek()</code> only that the time is specified as abs
 #### `ediPlayer.toggleId(id)`
 the same as <code>ediPlayer.seek()</code> only that the jump marker is passed over an ID to jump to defined positions. these positions come from the items-array that is available through the <code>items</code>event
 
-### `ediPlayer.next()`
+#### `ediPlayer.next()`
 same as <code>ediPlayer.seek()</code>, only that the time you jump to is from the list of toggle items and is relative to the current position of the stream. the stream is set to the beginning of the following item. However, this only works, if the service delivers toggles.
 
-### `ediPlayer.prev()`
+#### `ediPlayer.prev()`
 same as <code>ediPlayer.next()</code>, only if an item ran longer than 3 seconds, it jumps to the beginning of the current item, otherwise to the beginning of the previous item.
 
 ### Properties
