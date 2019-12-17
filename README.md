@@ -33,35 +33,28 @@ starts streaming data and Audiodecoding, when you call the function for the firs
 stops audio decoding and streaming data 
 
 #### `ediPlayer.seek(ms)`
-<<<<<<< HEAD
 if timeshift is supported by the EDI server (the <i>timeShiftControllerAvailable</i> is thrown), the EDI stream can be set to a time relative to now in milliseconds. <code>ediPlayer.seek(3600e3)</code> sets the edistream an hour ago
 
-=======
-if timeshift is supported by the EDI server, the EDI stream can be set to a time relative to now in milliseconds. <code>ediPlayer.seek(60 * 60 * 1e3)</code> sets the edistream an hour ago
->>>>>>> 8384157bca5c030f2d64526593132816b7662543
 #### `ediPlayer.seekUts(uts)`
 the same as <code>ediPlayer.seek()</code> only that the time is specified as absolute Unix time in Milliseconds.
 <code>ediPlayer.seekUts(new Date() - (1e3 * 60 * 5))</code> jumps 5sec back.
+
 #### `ediPlayer.toggleId(id)`
 the same as <code>ediPlayer.seek()</code> only that the jump marker is passed over an ID to jump to defined positions. these positions come from the items-array that is available through the <code>items</code>event
 
 ### `ediPlayer.next()`
 same as <code>ediPlayer.seek()</code>, only that the time you jump to is from the list of toggle items and is relative to the current position of the stream. the stream is set to the beginning of the following item. However, this only works, if the service delivers toggles.
+
 ### `ediPlayer.prev()`
 same as <code>ediPlayer.next()</code>, only if an item ran longer than 3 seconds, it jumps to the beginning of the current item, otherwise to the beginning of the previous item.
 
-
-
 ### Properties
-
 
 #### `ediPlayer.state`
 represents the current player state. it can be `running` or `stopped`.
 
 #### `ediPlayer.audioCtx`
 this lib uses in the background the [web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API). To increase control possibilities, this property provides the corresponding [baseAudioContext](https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext).
-
-
 
 ### Events
 
